@@ -1,5 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Ingredients from './pages/Ingredients';
+import Recipes from './pages/Recipes';
 
 function App() {
   return (
@@ -25,9 +27,14 @@ function App() {
 
         <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
           <Routes>
-            <Route path="/" element={<div>Welcome to Recipe Manager</div>} />
-            <Route path="/ingredients" element={<div>Ingredients Management</div>} />
-            <Route path="/recipes" element={<div>Recipes Management</div>} />
+            <Route path="/" element={
+              <div className="text-center">
+                <h1 className="text-4xl font-bold text-gray-900 mb-4">Welcome to Recipe Manager</h1>
+                <p className="text-lg text-gray-600">Manage your recipes and ingredients with ease</p>
+              </div>
+            } />
+            <Route path="/ingredients" element={<Ingredients />} />
+            <Route path="/recipes" element={<Recipes />} />
           </Routes>
         </div>
       </div>
